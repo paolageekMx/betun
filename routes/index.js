@@ -40,14 +40,14 @@ router.get("/plantillas", (req, res, next) => {
     });
 });
 
-router.post("/plantillas/edit", (req, res, next) => {
+router.post("/plantillas-edit", (req, res, next) => {
   var nuevaActividad = new Actividad(req.body.numero );
-  name = req.body.nombre;
+  name = req.body.id;
   console.log(nuevaActividad);
   console.log(name);
   nuevaActividad.save()
-  .then(nuevaActividad => {
-    res.render("/plantillas/edit/?nombre=" + name);
+  .then(() => {
+    res.redirect("/plantillas/edit/?nombre=" + name);
   })
   .catch(error => {
     console.log(error);
@@ -63,7 +63,7 @@ router.get("/plantillas/edit", (req, res, next) => {
   Plantilla.findOne({ nombre: req.query.nombre })
     .then(plantilla => {
       Actividad.find({ plantilla: plantilla.id }).then(actividad => {
-        console.log(actividad);
+        console.log("ACtividad"+actividad);
         res.render("plantillas-edit", { plantilla });
       });
     })
