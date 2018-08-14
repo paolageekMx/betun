@@ -1,0 +1,40 @@
+<div class='container'>
+  <h1>Plantilla de {{plantilla.nombre}}</h1>
+
+  {{#each plantilla.actividades}}
+  <div class='col-md-12'>
+    <div class='row'>
+      <div class='col-md-3'>
+        <div id='actividad'>{{this.nombre}}</div>
+      </div>
+      <div class='col-md-4'>
+        <img id='add-actividad' class='add-item' src='../images/add.png'>
+      </div>
+    </div>
+  </div>
+  {{#each this.subactividades}}
+  <div class="row">
+    <div class="col-md-3 offset-md-1">
+      {{this.numero}} {{this.nombre}}
+    </div>
+    <div class='col-md-4'>
+      <img class='add-item' src='../images/add.png'>
+    </div>
+  </div>
+  {{/each}} {{/each}}
+  <div id="input-act" class='col-md-12 none'>
+    <div class='row'>
+      <div class='col-md-3'>
+        <form action="/plantillas/:nombre" method="post">
+          <input name="input-actividad" id="input-actividad" type="text" placeholder="Escribe la actividad">
+          <button>Agregar</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<a href='/plantillas-edit'>
+  <img class="details" src="../images/pencil.png" alt="Editar" width='5%'>
+</a>

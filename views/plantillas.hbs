@@ -1,0 +1,25 @@
+<section>
+  <h1>Lista de Plantillas</h1>
+  <div class="row">
+    {{#each plantillas}}
+    <div class="card text-center" style="width: 10rem;">
+      <a href="plantillas/{{this.nombre}}">
+        <img class="card-img-top img-thumbnail img-fluid" src="{{this.img}}" alt="imagen">
+      </a>
+      <div class="card-body">
+        <p class="card-text">
+          <a href="/plantillas/{{this.nombre}}">{{this.nombre}}</a>
+           
+        <a href="/plantillas/edit?nombre={{this.nombre}}" class="edit-button"><img class='editar_plantilla' src='../images/pencil.png' alt='Editar' width='50%'></a>
+        </p>
+
+      </div>
+    </div>
+    {{/each}}
+  </div>
+   
+  <a href ='/plantillas-add'><img class="details" src="../images/plus (2).png" alt="Agregar" width='5%'></a>
+  
+
+  
+</section>

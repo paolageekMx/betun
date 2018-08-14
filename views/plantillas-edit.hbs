@@ -1,0 +1,79 @@
+<h1>Plantilla de {{plantilla.nombre}}</h1>
+
+
+
+
+<form action="/plantillas-edit" method="POST">
+  <div class="form-row">
+    <div class="col-md-1">
+      <input type="text" class="form-control" placeholder="Numero">
+    </div>
+      <div class="col-md-2 form-group">
+    <select class="form-control" id="tipo_actividad">
+      <option>Milestone</option>
+      <option>Cita</option>
+      <option>Tarea</option>
+    </select>
+  </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Descripción">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Duración">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+
+<table class="table table-hover table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Descripción</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Duracion</th>
+    </tr>
+    {{#each actividad.nombre}}
+    <tr>
+      <th scope"colr">{{actividad.numero}}</th>
+      <th scope="col">{{actividad.nombre}}</th>
+      <th scope="col">{{actividad.duracion}}</th>
+    </tr>
+  </thead>
+  </table>
+{{/each}}
+
+{{!-- <table class="table table-hover table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> --}}
+
+
+
+
+
+
